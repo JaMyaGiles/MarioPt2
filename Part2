@@ -1,0 +1,41 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        Scanner mario = new Scanner(System.in);
+        boolean valid = false;
+        int height;
+
+        while (!valid) {
+            System.out.println("Enter a positive height value that is between 1 and 8 inclusive: ");
+            height = mario.nextInt();
+            if (height>=1 && height<=8){
+                valid = true;
+                int counter = 0;
+                for (int row = 0; row < height; row++) {
+                    if (counter != height) {
+                        for (int spaces = (height - 1) - counter; spaces > 0; spaces--) {
+                            System.out.print(" ");
+                        }
+                        for (int hashes = 0; hashes <= counter; hashes++) {
+                            System.out.print("#");
+                        }
+
+                        System.out.print("  ");
+
+                        for (int hashes = 0; hashes <= counter; hashes++) {
+                            System.out.print("#");
+                        }
+
+                        System.out.print("\n");
+                        counter++;
+                    }
+                }
+            }
+        }
+    }
+}
